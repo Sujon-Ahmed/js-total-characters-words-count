@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: 'Josefin Sans', sans-serif;
+		}
+		.center_div{
+			width: 100vw;
+			height: 100vh;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+		}
+		textarea{
+			border: 2px solid #0984e3;
+			border-radius: 10px;
+			outline: none;
+			padding: 10px 4px;
+			font-size: 15px;
+			box-shadow: 0 0	4px 1px #b2bec3;
+		}
+		button{
+			padding: 20px 30px;
+			background: #74b9ff;
+			color: white;
+			border-radius: 10px;
+			border: 2px solid #0984e3;
+			font-size: 15px;
+			outline: none;
+			cursor: pointer;
+		}
+		p{
+			color:  #0984e3;
+			font-size: 15px;
+		}
+	</style>
+</head>
+<body>
+	<div class="center_div">
+		<textarea name="" id="words" cols="50" rows="10"></textarea>
+		<br>
+		<p id="showdata"> </p>
+		<p id="showwords"> </p>
+		<br>
+		<button onclick="countWords()">Count Char</button>
+		<br>
+	</div>
+	<script>
+		 const countWords = () => {
+		 	let noc = document.getElementById('words').value.length; 
+		 	let now = document.getElementById('words').value; 
+		 	now = now.match( /\w+/g );
+		 	now = now.length;
+		 	document.getElementById('showdata').innerHTML = " The total Characters = " + noc;
+		 	document.getElementById('showwords').innerHTML = " The total Words = " + now;
+		 	alert(noc);
+		 }
+	</script>
+</body>
+</html>
